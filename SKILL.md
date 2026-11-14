@@ -26,7 +26,7 @@ Video needs `ffmpeg` on PATH, sound needs Python 3. Override binaries with `FFMP
 - Lighting: a warm key from the lamp side, a strong cold rim from behind.
 - No pink, no neon, no green code, no other brand's logo.
 
-`sims/night/look.js` applies this to any object: set `PAL.orange = ORANGE_TO` and `PAL.white = SHELL` before the build, call `retint(root)` after the build and after every pose. It moves warm accents to amber, turns light opaque surfaces into dark shells and light see-through ones into blueprint blue. `node sims/night/probe_warm.mjs <entry> <t> <global>` lists any colour that escaped.
+`sims/night/look.js` applies this to any object: set `PAL.orange = ORANGE_TO` and `PAL.white = SHELL` before the build, call `retint(root)` after the build and after every pose. It moves warm accents to amber, turns light opaque surfaces into dark shells and light see-through ones into blueprint blue. A material with `userData.keep = true` is skipped: use it for bright steel (`#8c939b`) and brass (`#B08A5A`) behind the plates, or the mechanism turns black and the detail share drops. `node sims/night/probe_warm.mjs <entry> <t> <global>` lists any colour that escaped.
 
 ## Order of work
 
@@ -54,7 +54,22 @@ A dark-pixel count does not work when the shells are dark, so Blueprint measures
 
 `<name>-shared/` is the object, `<name>-film/` the full film, `<name>-demo/` the 10-second cut. These three came from the original cutaway skill and now render in the night look.
 
-A shark starts from `piranha-*`, a hummingbird from `wasp-*`. A snake has no close body: flag it to the user before starting and plan its own movement (a travelling wave along the spine) and its own beats.
+Blueprint's own builds, each started from the one above it in this list:
+
+| | Body | Started from | Good to copy |
+|---|---|---|---|
+| `shark-*` (Carcharo GW-1) | great white, glass teeth, ring-segmented tail stalk | `piranha-*` | jaws, a long segmented tail, a lunge at the lens |
+| `robohum-*` (Trochion TR-4) | hummingbird, glass feather blades, chest turbine | `wasp-*` | one lofted body (beak → tail), wing arms with joints, lit glass with subtle bloom, the `keep` flag |
+| `alligator-*` (Paludor AG-2) | 4 splayed legs, keeled scutes, glass flank dome | `shark-*` + tarantula gait | a 4-leg gait (`gait.js`), framing helpers (`fit.js`, `frame_check.mjs`) |
+| `chameleon-*` (Chromira CM-1) | eye turrets, spiral tail, gripping feet on a branch | `alligator-*` | independent eye turrets, a tongue launcher, a coiling tail |
+
+Each has `CHECKLIST.md` in its `-shared/` folder, an approved still in `-still/` and the 10-second cut in `-demo/`.
+
+A snake has no close body: flag it to the user before starting and plan its own movement (a travelling wave along the spine) and its own beats.
+
+## Reference sheets
+
+A single picture leaves Claude guessing proportions. The builds that went fastest used a reference sheet: one generated image with a hero shot, side/top/front/back views and close-ups of the key parts, then split into separate files from that same sheet (never regenerated one by one, or each panel draws a slightly different animal). Treat the full sheet as the source of truth, match the hero panel in the still, measure off the orthographic panels, design parts from the close-ups and follow the exploded panel for the teardown. Prompt in `docs/PROMPTS.md`.
 
 ## Files of one object
 

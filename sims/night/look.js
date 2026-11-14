@@ -52,6 +52,8 @@ export function retint(root) {
       fix(o.color, 0.3);
     }
     for (const m of [].concat(o.material || [])) {
+      // a material marked keep (bright steel and brass behind the plates) is left as it is
+      if (m.userData.keep) continue;
       // a colour the creature's pose rewrites every frame (the octopus's pulsing core) is turned again whenever it no
       // longer matches what was last written here
       const done = (m.userData.tinted ??= {});

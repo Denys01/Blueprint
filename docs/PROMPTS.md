@@ -22,6 +22,18 @@ Ready-made subjects:
 - **Snake:** `a cobra rising into a strike pose with its hood spread, the body as a chain of short ring segments with gaps showing a spine of gears, a glass hood with fine veins, glass fangs`
 - **Hummingbird:** `a hummingbird hovering in front of a single glass flower, wings spread as thin glass blades with fine veins, a long thin beak, a chest of layered plates over a small turbine`
 
+- **Great white:** `a great white shark, swimming, jaws slightly open with glass teeth, glass dorsal and pectoral fins, a segmented tail stalk ending in a glass crescent fin`
+- **Alligator:** `an American alligator low on four bent legs mid-stride, jaws slightly open with rows of glass teeth, keeled back plates like scutes, a glass panel on the flank over the gears, glass webbing between the toes, a long tail with a glass fin crest`
+- **Chameleon:** `a chameleon gripping a thin steel branch, tail curled into a tight spiral, eye turrets in cones of layered plates, a curved glass casque, mouth slightly open with a glass tongue tip`
+
+Lessons from the four Blueprint builds, worth keeping in any picture prompt:
+
+- Plates **satin-metallic** graphite curved like armor, so the warm key leaves bronze highlights; not flat matte black.
+- Mechanism **bright steel and brass**, so it reads in the gaps.
+- The head flows into the beak or snout as one form; no bulb head on a neck.
+- Wings and fins as separate glass blades with fine branching veins, never one sheet with a grid.
+- The whole subject in frame, side three-quarter view, a little from above.
+
 Pick subjects with many joints and a dense core. A long smooth surface stays a toy no matter how many rounds it gets. One main set of limbs per creature.
 
 ## 2. Still loop
@@ -57,4 +69,33 @@ Write a separate 10-second script for [subject]: the opening, one part, the expl
 
 ```
 Score the film from its timeline.json with sfx/score_kit.py: a low bed for the whole film, a soft click per button, a short accent on each part that moves, silence over continuous motion. Master to −14 LUFS.
+```
+
+## 1b. Reference sheet (what worked best)
+
+One image with every view of the same subject, then split into separate files from that image. Do not generate the panels one by one: each generation draws a slightly different animal.
+
+```
+A character reference sheet of one robotic [subject] built as a precision machine, dark night studio: background gradient from deep blue #154579 to near-black #09090A.
+Large hero panel top-left: [pose], side three-quarter view, the whole subject in frame.
+Other panels: side, top, front and back orthographic views; close-ups of [the eye, the key joints, the feet, the glass parts, the signature part]; an exploded view showing how the parts separate.
+Armor: curved overlapping plates in satin dark graphite #1A1C21 with fine seams and small rivets; bright steel and brass mechanism visible in the gaps: gears, pistons, hoses, screws.
+Warm amber #D78453 only on thin plate edges, joint rings and lens bezels, never as dots.
+Glass parts in cold pale blue #9CC9FF, translucent with fine veins.
+Warm key light from the left, strong cold blue rim light from behind, soft floor shadow.
+16:9. No text, no logos, no people.
+```
+
+Name the split files by number and part (`01_hero.png`, `02_side.png`, … `10_tongue_launcher.png`) and keep the full sheet next to them. In the build prompt: the sheet is the source of truth, `01_hero` is the pose for the still, the orthographic panels are for measuring, the close-ups for part design, the exploded panel for the teardown.
+
+## 6. Build prompt that kept rounds low
+
+```
+Use the blueprint skill. Reference: [subject].png (the sheet, source of truth) plus the split panels in [folder]. Use them as is.
+- 01_hero: the look and pose to match in the still.
+- Measure proportions once from the side/top/front/back panels.
+- Part design from the close-ups; the teardown follows the exploded panel.
+Base, to save tokens: start from [closest example]; read only what you need.
+Build, render the still, save [subject]-still-r1.png. At most ONE fix pass (save -r2, keep r1's code). Then one strip (hero | still) + 900px and stop. No film before my yes.
+After my yes: ONLY the 10-second cut, one shot per beat from its own side and distance, frame 0 big and clear of the side panels, labels clear of the cards, no bloom flash, ending on the subject, not an empty frame.
 ```

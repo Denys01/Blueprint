@@ -4,3 +4,7 @@ __pycache__/
 *.pyc
 
 blueprint-out/
+
+# still rounds kept locally to go back to; only the approved build is published
+sims/*-still-r*/
+sims/*-shared/*_r[0-9].js

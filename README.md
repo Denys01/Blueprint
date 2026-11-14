@@ -4,6 +4,17 @@
 
 Dark matte shells, one warm amber accent, cold blueprint light on everything you can see through. Every part is a button: press it and that part opens under its own camera while live cards on the page follow along. The same code renders a 60 fps film with a score built on the same timeline.
 
+## Made with it
+
+Four builds, each from one AI picture, each a 10-second cut rendered frame by frame from code. Click a preview for the full mp4 with sound.
+
+| | |
+|---|---|
+| [![Carcharo GW-1, robotic great white](media/shark.gif)](media/shark.mp4)<br>**Carcharo GW-1** · great white · built on the piranha | [![Trochion TR-4, robotic hummingbird](media/hummingbird.gif)](media/hummingbird.mp4)<br>**Trochion TR-4** · hummingbird · built on the wasp |
+| [![Paludor AG-2, robotic alligator](media/alligator.gif)](media/alligator.mp4)<br>**Paludor AG-2** · alligator · built on the shark | [![Chromira CM-1, robotic chameleon](media/chameleon.gif)](media/chameleon.mp4)<br>**Chromira CM-1** · chameleon · built on the alligator |
+
+Each one reuses the closest earlier body, so every new animal starts further along than the last.
+
 ## Install
 
 ```
@@ -26,7 +37,7 @@ Give Claude Code a picture and say what you want in plain words:
 
 > The still is approved. Film it like the piranha example, 21 seconds, then a 10-second cut.
 
-No picture yet? `docs/PROMPTS.md` has the reference prompt in the Neurivex look, plus ready-made ones for a shark, a snake and a hummingbird.
+No picture yet? `docs/PROMPTS.md` has the reference prompt in the Neurivex look, ready-made subjects, and the reference-sheet prompt that worked best: one sheet with a hero shot, side/top/front/back views and close-ups, split into separate panels for Claude to read.
 
 ## The look
 
@@ -59,7 +70,9 @@ The details are in `docs/`.
 | `docs/` | The brief, the checklist format, all prompts, the lessons log. |
 | `sims/night/` | The night look and the page around every object, plus review tools. |
 | `sims/kit/` | Runtime, stage, shader warm-up. |
-| `sims/<name>-shared/-film/-demo` | Example objects: the object, the full film, the 10-second cut. |
+| `sims/<name>-shared/-film/-demo` | Original examples (tarantula, piranha, wasp): the object, the full film, the 10-second cut. |
+| `sims/<name>-shared/-still/-demo` | Blueprint builds (shark, robohum, alligator, chameleon): the object with its checklist, the approved still, the 10-second cut. |
+| `media/` | Previews of the four Blueprint cuts (GIF for the README, mp4 with sound). |
 | `sims/build.mjs` | Bundles an object into one offline HTML file. |
 | `sims/capture.mjs` | Renders frames to a 60 fps mp4 or to review sheets. |
 | `sfx/`, `run_sfx.py` | Procedural sound on the film's timeline, mastered to −14 LUFS. |
@@ -68,6 +81,6 @@ The details are in `docs/`.
 
 Blueprint is a fork of [Nyxera0x/cutaway](https://github.com/Nyxera0x/cutaway) (MIT): the tarantula, piranha and wasp examples and the build/review method come from there. The runtime, capture and sound engine come from [whaleyxbt/claude-motion](https://github.com/whaleyxbt/claude-motion) (MIT). Recorded samples are CC0 from Freesound, prepared by [Barty-Bart/motion-graphics](https://github.com/Barty-Bart/motion-graphics); sources in `sfx/samples/SOURCES.md`.
 
-What's new in Blueprint: the night look (palette, lighting, dark page), a detail-based density check that works on dark shells, the `blueprint-kit` / `blueprint-night` import names, and new reference prompts.
+What's new in Blueprint: the night look (palette, lighting, dark page), a detail-based density check that works on dark shells, a `keep` flag so bright steel and brass survive the night retint, the `blueprint-kit` / `blueprint-night` import names, new reference prompts, and four new builds (great white, hummingbird, alligator, chameleon) with their corrections logged in `docs/`.
 
 MIT licence.
