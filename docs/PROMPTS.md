@@ -73,6 +73,8 @@ Score the film from its timeline.json with sfx/score_kit.py: a low bed for the w
 
 ## 1b. Reference sheet (what worked best)
 
+Full step-by-step for ChatGPT, with the split message and a worked example: [REFERENCE_IMAGES.md](REFERENCE_IMAGES.md).
+
 One image with every view of the same subject, then split into separate files from that image. Do not generate the panels one by one: each generation draws a slightly different animal.
 
 ```

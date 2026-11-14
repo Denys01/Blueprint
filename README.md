@@ -37,7 +37,7 @@ Give Claude Code a picture and say what you want in plain words:
 
 > The still is approved. Film it like the piranha example, 21 seconds, then a 10-second cut.
 
-No picture yet? `docs/PROMPTS.md` has the reference prompt in the Neurivex look, ready-made subjects, and the reference-sheet prompt that worked best: one sheet with a hero shot, side/top/front/back views and close-ups, split into separate panels for Claude to read.
+No picture yet? `docs/PROMPTS.md` has the reference prompt in the Neurivex look, ready-made subjects, and the reference-sheet prompt that worked best: one sheet with a hero shot, side/top/front/back views and close-ups, split into separate panels for Claude to read. Step by step for ChatGPT, with a worked example: [`docs/REFERENCE_IMAGES.md`](docs/REFERENCE_IMAGES.md).
 
 ## The look
 
@@ -67,7 +67,7 @@ The details are in `docs/`.
 | | |
 |---|---|
 | `SKILL.md` | What Claude follows: order of work, rules, review loop, commands. |
-| `docs/` | The brief, the checklist format, all prompts, the lessons log. |
+| `docs/` | The brief, the checklist format, all prompts, how to make the reference images in ChatGPT, the lessons log. |
 | `sims/night/` | The night look and the page around every object, plus review tools. |
 | `sims/kit/` | Runtime, stage, shader warm-up. |
 | `sims/<name>-shared/-film/-demo` | Original examples (tarantula, piranha, wasp): the object, the full film, the 10-second cut. |
