@@ -81,7 +81,7 @@ The details are in `docs/`.
 
 ## Credits
 
-Blueprint is a fork of [Nyxera0x/cutaway](https://github.com/Nyxera0x/cutaway) (MIT): the tarantula, piranha and wasp examples and the build/review method come from there. The runtime, capture and sound engine come from [whaleyxbt/claude-motion](https://github.com/whaleyxbt/claude-motion) (MIT). Recorded samples are CC0 from Freesound, prepared by [Barty-Bart/motion-graphics](https://github.com/Barty-Bart/motion-graphics); sources in `sfx/samples/SOURCES.md`.
+(MIT): the tarantula, piranha and wasp examples and the build/review method come from there. The runtime, capture and sound engine come from [whaleyxbt/claude-motion](https://github.com/whaleyxbt/claude-motion) (MIT). Recorded samples are CC0 from Freesound, prepared by [Barty-Bart/motion-graphics](https://github.com/Barty-Bart/motion-graphics); sources in `sfx/samples/SOURCES.md`.
 
 What's new in Blueprint: the night look (palette, lighting, dark page), a detail-based density check that works on dark shells, a `keep` flag so bright steel and brass survive the night retint, the `blueprint-kit` / `blueprint-night` import names, new reference prompts, and four new builds (great white, hummingbird, alligator, chameleon) with their corrections logged in `docs/`.
 
