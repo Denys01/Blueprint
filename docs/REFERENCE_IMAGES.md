@@ -35,6 +35,12 @@ Check before you split:
 
 If something is off, ask for that one change on the same sheet ("keep everything, make the tail longer") instead of generating a new one.
 
+What the ant prompt below produced on the first try:
+
+![Robotic ant reference sheet](img/ant-sheet.jpg)
+
+Note the exploded view shows 8 legs while every other panel shows 6: say which is right in your build prompt.
+
 ## Message 2: the split
 
 ```

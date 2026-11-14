@@ -15,6 +15,8 @@ Four builds, each from one AI picture, each a 10-second cut rendered frame by fr
 
 Each one reuses the closest earlier body, so every new animal starts further along than the last.
 
+**New here? Read the [full guide](docs/GUIDE.md):** setup, the reference sheet, the still, the film, posting, troubleshooting.
+
 ## Install
 
 ```
@@ -67,7 +69,7 @@ The details are in `docs/`.
 | | |
 |---|---|
 | `SKILL.md` | What Claude follows: order of work, rules, review loop, commands. |
-| `docs/` | The brief, the checklist format, all prompts, how to make the reference images in ChatGPT, the lessons log. |
+| `docs/` | The full guide, the brief, the checklist format, all prompts, how to make the reference images in ChatGPT, the lessons log. |
 | `sims/night/` | The night look and the page around every object, plus review tools. |
 | `sims/kit/` | Runtime, stage, shader warm-up. |
 | `sims/<name>-shared/-film/-demo` | Original examples (tarantula, piranha, wasp): the object, the full film, the 10-second cut. |
